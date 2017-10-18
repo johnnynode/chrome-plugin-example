@@ -1,0 +1,40 @@
+{
+    "name": "chrome-plugin-example",
+    "description": "just a demo",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon-19.png",
+            "38": "images/icon-38.png"
+        },
+        "default_title": "chrome-plugin-example",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
+    "permissions": [
+        "*",
+        "http://localhost:3000/",
+        "tabs",
+        "storage"
+    ],
+    "content_scripts": [{
+        "matches": ["*"],
+        "js": ["js/hacker.js"]
+    }],
+    "commands": {
+        "toggle-feature": {
+            "suggested_key": { "default": "Ctrl+Shift+Y" },
+            "description": "Send a 'toggle-feature' event to the extension"
+        },
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "MacCtrl+Shift+F"
+            }
+        }
+    }
+}
