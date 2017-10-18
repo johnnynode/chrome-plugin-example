@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 300px;
+    color: #333;
+    overflow: hidden;
+    margin: 0;
+    padding: 10px;
+    background: white;
+    font-size: 12px;
+}
+
+#title {
+    color: #333;
+    line-height: 30px;
+    margin-bottom:15px;
+}
+
+#form {
+    position: relative;
+}
+
+#form input {
+    display: block;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    padding-left:5px;
+    outline: none;
+    margin: 0 10px 25px;
+}
+
+#form button {
+    width: 60px;
+    height: 140px;
+    background-color: #00a0e9;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    outline: none;
+}
+
+#form input {
+    margin-bottom: 5px;
+}
