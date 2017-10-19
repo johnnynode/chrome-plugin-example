@@ -16,13 +16,12 @@
         "128": "images/icon-128.png"
     },
     "permissions": [
-        "*",
         "http://localhost:3000/",
         "tabs",
         "storage"
     ],
     "content_scripts": [{
-        "matches": ["*"],
+        "matches": ["http://localhost:3000/*"],
         "js": ["js/hacker.js"]
     }],
     "commands": {
