@@ -6,6 +6,9 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, function (tabs) {
 
     // 获取浏览器本地存储
     chrome.tabs.sendMessage(tabs[0].id, {action:'getStorage'}, function(resp){
+        if(!resp) {
+            return;
+        }
         db.value = resp.db;
         category.value = resp.category;
         user.value = resp.user;
@@ -14,7 +17,7 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, function (tabs) {
     // 点击按钮的发送
     btn.onclick = function () {
         var messageData = {
-            action: 'openx',
+            action: 'clickSend',
             list: {
                 db: db.value,
                 category: category.value,

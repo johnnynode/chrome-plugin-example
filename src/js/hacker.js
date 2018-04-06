@@ -1,12 +1,13 @@
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
-        if (request.action === "openx") {
+        if (request.action === "clickSend") {
             var postData = getInputsGui(document, request.list); // 获取数据
-            handlePostAjax(postData, request.list, 'http://localhost:3000/');
+            handlePostAjax(postData, request.list, 'http://127.0.0.1:3000/');
         }
 
         if (request.action === "getStorage") {
-            sendResponse(JSON.parse(localStorage.chromeSpecialSci)); // 发送数据
+            var chromePluginStore = localStorage.chromePlugin;
+            sendResponse(chromePluginStore ? JSON.parse(chromePluginStore) : null);
         }
     });
 
@@ -35,17 +36,18 @@ function getInputsGui(d, messageData) {
 
 // 处理Post方法
 function handlePostAjax(postData, list, url) {
+    console.log(postData);
     var xhr = new XMLHttpRequest();
     xhr.open('post', url); // 发起请求
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // 设置请求头
     xhr.send(JSON.stringify(postData)); // 发送到服务器
 
     xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            localStorage.chromeSpecialSci = JSON.stringify(list); // 用于本地存储的数据
+        console.log('xhr.readyState:' + xhr.readyState + " xhr.status: " + xhr.status);
+        if ((xhr.readyState === 4) && (xhr.status === 200)) {
+            localStorage.chromePlugin = JSON.stringify(list); // 用于本地存储的数据
             alert('发送完成!');
-
-        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+        } else if ((xhr.readyState === 4) && (xhr.status !== 200)) {
             alert('fail');
         }
     }

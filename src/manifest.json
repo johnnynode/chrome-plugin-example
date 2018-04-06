@@ -16,7 +16,7 @@
         "128": "images/icon-128.png"
     },
     "permissions": [
-        "http://localhost:3000/",
+        "http://localhost:3000/*",
         "tabs",
         "storage"
     ],
