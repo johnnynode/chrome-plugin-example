@@ -11,8 +11,6 @@ chrome.extension.onMessage.addListener(
         }
     });
 
-/* 通用函数 */
-
 // 从input选中的获取gui
 function getInputsGui(d, messageData) {
     var inputs = d.querySelectorAll('input[type="checkbox"]');
@@ -36,14 +34,12 @@ function getInputsGui(d, messageData) {
 
 // 处理Post方法
 function handlePostAjax(postData, list, url) {
-    console.log(postData);
     var xhr = new XMLHttpRequest();
     xhr.open('post', url); // 发起请求
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // 设置请求头
     xhr.send(JSON.stringify(postData)); // 发送到服务器
 
     xhr.onreadystatechange = function() {
-        console.log('xhr.readyState:' + xhr.readyState + " xhr.status: " + xhr.status);
         if ((xhr.readyState === 4) && (xhr.status === 200)) {
             localStorage.chromePlugin = JSON.stringify(list); // 用于本地存储的数据
             alert('发送完成!');
