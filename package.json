@@ -1,0 +1,17 @@
+{
+  "name": "chrome-plugin-example",
+  "version": "1.0.0",
+  "description": "An example for chrome-plugin",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnynode/chrome-plugin-example.git"
+  },
+  "keywords": ["Chrome plugin", "Chrome extension", "Chrome plugin example"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnynode/chrome-plugin-example/issues"
+  },
+  "homepage": "https://github.com/johnnynode/chrome-plugin-example#readme"
+}
