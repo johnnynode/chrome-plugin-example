@@ -8,7 +8,7 @@
     "url": "git+https://github.com/johnnynode/chrome-plugin-example.git"
   },
   "keywords": ["Chrome plugin", "Chrome extension", "Chrome plugin example"],
-  "author": "",
+  "author": "https://github.com/johnnynode",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/johnnynode/chrome-plugin-example/issues"
