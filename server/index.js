@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
         fs.createReadStream(__dirname + '/index.html', 'utf8').pipe(res);
     }else if (url === '/' && method === 'POST') {
         parsePostData(req, (data) => {
-            console.log(data); // 输出请求对象
+            console.log(data); // log request data
             res.end('post received');
         });
     };

@@ -1,7 +1,7 @@
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
         if (request.action === "clickSend") {
-            var postData = getInputsGui(document, request.list); // 获取数据
+            var postData = getInputsGui(document, request.list); // get data
             handlePostAjax(postData, request.list, 'http://127.0.0.1:3000/');
         }
 
@@ -11,10 +11,10 @@ chrome.extension.onMessage.addListener(
         }
     });
 
-// 从input选中的获取gui
+// get guis from chosen inputs
 function getInputsGui(d, messageData) {
     var inputs = d.querySelectorAll('input[type="checkbox"]');
-    var inputsArray = []; // input 数组集合
+    var inputsArray = []; // input array list
     for (var i = 0; i < inputs.length; i++) {
         if (inputs[i].checked) {
             inputsArray.push(inputs[i].getAttribute('gui'));
@@ -32,17 +32,17 @@ function getInputsGui(d, messageData) {
     return postData;
 }
 
-// 处理Post方法
+// handle post method
 function handlePostAjax(postData, list, url) {
     var xhr = new XMLHttpRequest();
-    xhr.open('post', url); // 发起请求
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // 设置请求头
-    xhr.send(JSON.stringify(postData)); // 发送到服务器
+    xhr.open('post', url); // send an request
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // set request header
+    xhr.send(JSON.stringify(postData)); // send to server
 
     xhr.onreadystatechange = function() {
         if ((xhr.readyState === 4) && (xhr.status === 200)) {
-            localStorage.chromePlugin = JSON.stringify(list); // 用于本地存储的数据
-            alert('发送完成!');
+            localStorage.chromePlugin = JSON.stringify(list); // for local storage
+            alert('send success!');
         } else if ((xhr.readyState === 4) && (xhr.status !== 200)) {
             alert('fail');
         }

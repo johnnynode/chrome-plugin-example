@@ -4,7 +4,7 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, function (tabs) {
     var category = document.querySelector('#category');
     var user = document.querySelector('#user');
 
-    // 获取浏览器本地存储
+    // get browser local storage
     chrome.tabs.sendMessage(tabs[0].id, {action:'getStorage'}, function(resp){
         if(!resp) {
             return;
@@ -12,9 +12,9 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, function (tabs) {
         db.value = resp.db;
         category.value = resp.category;
         user.value = resp.user;
-    }); // 用于获取存储
+    }); 
 
-    // 点击按钮的发送
+    // send button click event handler
     btn.onclick = function () {
         var messageData = {
             action: 'clickSend',
@@ -25,6 +25,6 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, function (tabs) {
             }
         };
 
-        chrome.tabs.sendMessage(tabs[0].id, messageData); // 用于调用ajax
+        chrome.tabs.sendMessage(tabs[0].id, messageData); // chrome send message here
     }
 });
