@@ -30,6 +30,7 @@
 ### Remarks
 
 - view the code, you will understand it
+- if you have any doubts, feel free to open an issue
 
 ### License
 
