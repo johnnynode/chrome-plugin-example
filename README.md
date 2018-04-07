@@ -23,6 +23,10 @@
 - click the installed plugin, input your info and click the blue `Send` button
 - then server side can receive the message
 
+### Blog
+
+- [click Here](https://blog.csdn.net/tyro_java/article/details/79844607)
+
 ### Remarks
 
 - view the code, you will understand it
