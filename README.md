@@ -4,7 +4,7 @@
 
 - $ `git clone git@github.com:johnnynode/chrome-plugin-example.git --depth 1`
 
-### Service side
+### Server side
 
 - $ `cd server`
 - $ `node index`
@@ -20,5 +20,13 @@
 
 - visit: `http://127.0.0.1:3000/`
 - select some checkbox buttons
-- click installed plugin and input your info and test
+- click the installed plugin, input your info and click the blue `Send` button
 - then server side can receive the message
+
+### Remarks
+
+- view the code, you will understand it
+
+### License
+
+MIT &copy; [johnnynode](http://github.com/johnnynode)
