@@ -13,8 +13,8 @@
 
 - open chrome browser 
 - enter URL ：`chrome://extensions/`
-- click <load unpacked> choose `src` folder or you can drag the `src.crx` or `src.pem` file into that extensions page
-- plugin is installed now
+- click `load unpacked` and choose `src` folder or you can drag the `src.crx` or `src.pem` file into that extensions page
+- plugin would be installed
 
 ### Test
 
